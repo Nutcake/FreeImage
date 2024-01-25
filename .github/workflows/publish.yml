@@ -17,7 +17,7 @@ jobs:
       - name: Build Native Linux
         run: |
           apt update
-          apt install -y make gcc g++
+          apt install -y make gcc g++ unzip
           make all
       - uses: actions/upload-artifact@v4
         with:
