@@ -13,10 +13,13 @@ on:
 jobs:
   buildLinux:
     runs-on: ubuntu-latest
+    container: debian:buster
     steps:
       - uses: actions/checkout@v4
       - name: Build Native Linux
-        run: make all
+        run: |
+          sudo apt install -y make gcc g++
+          make all
       - uses: actions/upload-artifact@v4
         with:
           path: Dist/
