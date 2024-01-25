@@ -16,7 +16,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build Native Linux
         run: |
-          sudo apt install -y make gcc g++
+          apt update
+          apt install -y make gcc g++
           make all
       - uses: actions/upload-artifact@v4
         with:
